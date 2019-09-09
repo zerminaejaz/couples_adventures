@@ -1,12 +1,19 @@
 class DiariesController < ApplicationController
 
-    before_action :set_diary, only: [:show, :edit, :update, :destroy]
-    
+    before_action :set_diary, only: [:show, :edit, :update, :destroy, :diary_entries]
+
     def index
     end
 
     def show
     end
+
+
+    def diary_entries
+        
+        
+    end
+
 
     def new
     end

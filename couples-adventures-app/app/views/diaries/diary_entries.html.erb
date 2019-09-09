@@ -1,0 +1,5 @@
+<h1> <%= @diary.shipname%>'s Entries </h1>
+
+<% @diary.entries.each do |entry| %>
+<p><%= link_to entry.title, entry %></p>
+<% end %>

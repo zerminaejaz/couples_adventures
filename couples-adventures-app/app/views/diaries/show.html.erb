@@ -1,1 +1,6 @@
-<h1><%= @diary.shipname %></h1>
+<h1><%= @diary.shipname %>'s Diary</h1>
+
+<%= link_to "View Entries", diary_entries_path %>  
+
+<!-- does the index of entries show all entries for everyone or the entries for that specific diary? if not specific how? -->
+<!--  custom route that finds all the entries specific to this diary and connects it to a new view -->

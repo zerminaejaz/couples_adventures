@@ -12,7 +12,7 @@ Picture.destroy_all
 
 d1 = Diary.create(shipname: "Inome", person1: "Inuyasha", person2: "Kagome", password: "12345")
 
-pic1 = Picture.create(date: Time.now, url: "https://pm1.narvii.com/6711/1bf427bf283099ebc639bca0225711a0fa71eadf_hq.jpg") 
+pic1 = Picture.create(date: Time.now, url: "https://i.redd.it/or971f0e1ny21.jpg") 
 pic2 = Picture.create(date: Time.now, url: "http://i.ytimg.com/vi/QhgWZz7zH70/hqdefault.jpg") 
 
 entry1 = Entry.create(date: Time.now, title: "Long awaited reunion", description: "Traveled through time and space for this.", picture: pic1, diary: d1)
