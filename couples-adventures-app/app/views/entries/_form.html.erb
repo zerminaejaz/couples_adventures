@@ -1,0 +1,18 @@
+<%= form_for @entry do |f|%>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+    <%= f.label :picture_id %>
+    <%= f.collection_select :picture_id, Picture.all,:id, :url  %> <!--update after session lesson  -->
+
+    <%= f.label :diary_id %>
+    <%= f.collection_select :diary_id, Diary.all, :id, :shipname %>
+
+    <%= f.submit %>
+<%end%>

@@ -10,15 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_09_201941) do
+ActiveRecord::Schema.define(version: 2019_09_10_171758) do
+
+  create_table "albums", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_albums_on_user_id"
+  end
 
   create_table "diaries", force: :cascade do |t|
     t.string "shipname"
-    t.string "password"
     t.string "person1"
     t.string "person2"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_diaries_on_user_id"
   end
 
   create_table "entries", force: :cascade do |t|
@@ -36,10 +45,22 @@ ActiveRecord::Schema.define(version: 2019_09_09_201941) do
   create_table "pictures", force: :cascade do |t|
     t.datetime "date"
     t.string "url"
+    t.integer "album_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["album_id"], name: "index_pictures_on_album_id"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "albums", "users"
+  add_foreign_key "diaries", "users"
   add_foreign_key "entries", "diaries"
   add_foreign_key "entries", "pictures"
+  add_foreign_key "pictures", "albums"
 end

@@ -7,3 +7,5 @@
 <p> <%= @entry.date %> </p>
 <p> <%= @entry.description %></p>
 
+<%= button_to "Edit this Memory", edit_entry_path, method: :get%>
+<%= button_to "Delete this Memory", @entry, method: :delete%>

@@ -9,18 +9,25 @@ class EntriesController < ApplicationController
     end
 
     def new
+        @entry = Entry.new
     end
 
     def create
+        @entry = Entry.create(entry_params)
+        redirect_to @entry
     end
 
     def edit
     end
     
     def update
+        @entry.update(entry_params)
+        redirect_to @entry
     end
 
     def destroy
+        @entry.destroy
+        redirect_to diary_entries_path(@entry.diary.id)
     end
 
     private
