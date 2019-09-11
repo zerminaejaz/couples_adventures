@@ -30,6 +30,7 @@ class EntriesController < ApplicationController
         redirect_to diary_entries_path(@entry.diary.id)
     end
 
+
     private
 
     def set_entry

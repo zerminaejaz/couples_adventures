@@ -10,21 +10,23 @@ class DiariesController < ApplicationController
 
 
     def diary_entries
-        
-        
     end
 
 
     def new
+        @diary = Diary.new
     end
 
     def create
+        @diary = Diary.create(diary_params)
     end
 
     def edit
     end
     
     def update
+        @diary.update(diary_params)
+        redirect_to @diary
     end
 
     def destroy

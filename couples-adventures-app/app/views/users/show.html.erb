@@ -1,0 +1,5 @@
+<h1>@user.name</h1>
+
+<h2>Where would you like to go?</h2>
+<%= button_to "Diary", @user.diaries.first, diary_path %>
+<%= button_to "Album", @user.albums.first, album_path %>

@@ -1,0 +1,15 @@
+<h1>Update your Diary!</h1>
+
+<%= form_for @diary do |f|%>
+    <%= f.hidden_field :user_id, value: @diary.user.id %>
+    <%= f.label :shipname %>
+    <%= f.text_field :shipname %>
+
+    <%= f.label :person1 %>
+    <%= f.text_field :person1 %>
+
+    <%= f.label :person2 %>
+    <%= f.text_field :person2 %>
+
+    <%= f.submit %>
+<%end%>

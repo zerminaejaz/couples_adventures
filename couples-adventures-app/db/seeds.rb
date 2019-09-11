@@ -13,7 +13,7 @@ Picture.destroy_all
 User.destroy_all
 
 
-user1 = User.create(name: "Inuyasha", password_digest: "kagome")
+user1 = User.create(name: "Inuyasha", password: "kagome")
 
 d1 = Diary.create(shipname: "Inome", person1: "Inuyasha", person2: "Kagome", user: user1)
 

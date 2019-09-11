@@ -14,9 +14,14 @@ class PicturesController < ApplicationController
 
     def create
         @picture = Picture.create(picture_params)
-        redirect_to album_path(@picture.album)
+        render new_entry_path
+
+
     end
 
+    def new_entry_picture
+        @picture = Picture.new
+    end
 
     def destroy
         @picture.destroy

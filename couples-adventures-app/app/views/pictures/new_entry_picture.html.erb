@@ -1,0 +1,14 @@
+<h1> Add A New Picture For your Entry! </h1>
+
+<%= form_for @picture do |f|%>
+    <%= f.label :date %>
+    <%= f.date_field :date %>
+
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+    
+    <%= f.label :album_id %>
+    <%= f.collection_select :album_id, Album.all, :id, :name %>
+
+    <%= f.submit "Add Picture" %>
+<%end%>
