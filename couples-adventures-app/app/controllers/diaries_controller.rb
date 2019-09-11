@@ -37,7 +37,7 @@ class DiariesController < ApplicationController
     end
 
     def diary_params
-        params.require(:diary).permit(:shipname, :password, :person1, :person2)
+        params.require(:diary).permit(:shipname, :password, :person1, :person2, :user_id)
     end
 
 end

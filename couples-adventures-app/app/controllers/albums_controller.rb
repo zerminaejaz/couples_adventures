@@ -6,6 +6,7 @@ class AlbumsController < ApplicationController
     end
 
     def show
+        @picture = Picture.new
     end
 
 
@@ -39,7 +40,7 @@ class AlbumsController < ApplicationController
     end
 
     def album_params
-        params.require(:album).permit(:name)
+        params.require(:album).permit(:name, :user_id)
     end
 
 end
