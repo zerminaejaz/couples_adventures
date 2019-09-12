@@ -10,6 +10,19 @@
   </head>
 
   <body>
+    <header>
+      <% if @logged_in_user %>
+        Logged In As <%= @logged_in_user.name%>
+        <%= form_tag logout_path, method: :delete do %>
+          <%= button_tag "logout" %>
+        <% end %>
+      <% else %>
+        <%= link_to  "Log In", new_login_path%>
+        <%= link_to  "Sign up", new_user_path%>
+      <% end %>
+    </header>
+
+
     <%= yield %>
   </body>
 </html>

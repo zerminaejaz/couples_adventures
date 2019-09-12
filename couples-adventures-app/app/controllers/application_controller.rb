@@ -1,2 +1,13 @@
 class ApplicationController < ActionController::Base
+    before_action :set_up_user
+
+    private
+
+    def set_up_user
+        if (session[:user_id])
+            @logged_in_user = User.find(session[:user_id])
+            #maybe add methods to limit diary numbers
+        end
+    end
+
 end

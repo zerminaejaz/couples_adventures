@@ -2,7 +2,7 @@ class LoginController < ApplicationController
 
     def create
         user = User.find_by(name: params[:name])
-        byebug
+        # byebug
         if user && user.authenticate(params[:password])
             session[:user_id] = user.id
         # byebug    
@@ -14,8 +14,11 @@ class LoginController < ApplicationController
 
     end
 
-    def destroy
+    def destroy     
+        session[:user_id] = nil
+        redirect_to new_login_path
 
+        #redirect to new login page
     end
 
 end

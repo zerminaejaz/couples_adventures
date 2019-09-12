@@ -8,6 +8,7 @@ class UsersController < ApplicationController
             flash[:errors] = ["Sorry your ship is not here"]
             redirect_to new_login_path
         end
+
     end
 
     def new

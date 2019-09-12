@@ -1,5 +1,17 @@
-<h1>@user.name</h1>
+<h1><%= @user.name %></h1>
 
 <h2>Where would you like to go?</h2>
-<%= button_to "Diary", @user.diaries.first, diary_path %>
-<%= button_to "Album", @user.albums.first, album_path %>
+
+
+<% if !@user.diaries.first%>
+    <%= button_to "Diary", new_diary_path, method: :get%>
+<% else %>
+    <%= button_to "Diary", diary_path(@user.diaries.first), method: :get%>
+<% end %>
+
+<% if !@user.albums.first%>
+    <%= button_to "Album", new_album_path, method: :get%>
+<% else %>
+    <%= button_to "Album", album_path(@user.albums.first), method: :get%>
+<% end %>
+
