@@ -1,16 +1,2 @@
 <%= form_for @diary do |f|%>
-
-    <%= f.label :shipname %>
-    <%= f.text_field :shipname %>
-
-    <%= f.label :person1 %>
-    <%= f.text_field :person1 %>
-
-    <%= f.label :person2 %>
-    <%= f.text_field :person2 %>
-
-    <%= f.label :user_id %>
-    <%= f.collection_select :user_id, User.all, :id, :name %>
-
-    <%= f.submit %>
-<%end%>
+<%=render 'form'%>

@@ -1,7 +1,9 @@
 <h1> <%= @entry.title %></h1>
 
+
+
 <a href= <%= picture_path(@entry.picture)%>> 
-    <img src= <%= @entry.picture.url %>/> 
+    <img src= "<%= @entry.picture.url %>"/> 
 </a>
 
 <p> <%= @entry.date %> </p>
