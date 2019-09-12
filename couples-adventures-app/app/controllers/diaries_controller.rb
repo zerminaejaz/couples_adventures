@@ -19,6 +19,7 @@ class DiariesController < ApplicationController
 
     def create
         @diary = Diary.create(diary_params)
+        redirect_to @diary
     end
 
     def edit

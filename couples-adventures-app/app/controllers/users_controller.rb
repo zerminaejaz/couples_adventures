@@ -28,9 +28,8 @@ class UsersController < ApplicationController
 
     def destroy
         @user.destroy
-        redirect_to login_path
-        
-        #create custom path to a page that says "Sorry your ship has sunk"
+        session[:user_id] = nil
+        redirect_to sorry_static_path  
 
     end
 

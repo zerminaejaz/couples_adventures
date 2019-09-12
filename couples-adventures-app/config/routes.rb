@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post '/pictures/new_entry_picture', to: 'pictures#new_entry_picture', as: 'new_entry_picture'
 
   get '/home', to: 'static#home', as: 'home_static'
+  get '/sorry', to: 'static#sorry', as: 'sorry_static'
 
   delete '/logout', to: 'login#destroy', as: 'logout'
 

@@ -14,9 +14,8 @@ class PicturesController < ApplicationController
 
     def create
         @picture = Picture.create(picture_params)
-        render new_entry_path
-
-
+        # render new_entry_path need to do cookies to edit a return to previous page
+        redirect_to album_path(@picture.album.id)
     end
 
     def new_entry_picture

@@ -1,0 +1,9 @@
+<h1>Add an Album to Track Your Adventures!</h1>
+
+<%= form_for @album do |f| %>
+    <%= f.hidden_field :user_id, value: @logged_in_user.id%>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.submit "Create Album"%>
+<% end %>

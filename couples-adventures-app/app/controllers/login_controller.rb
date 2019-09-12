@@ -16,9 +16,7 @@ class LoginController < ApplicationController
 
     def destroy     
         session[:user_id] = nil
-        redirect_to new_login_path
-
-        #redirect to new login page
+        redirect_to home_static_path
     end
 
 end

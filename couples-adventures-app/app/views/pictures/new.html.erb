@@ -1,6 +1,7 @@
 <h1> Add A New Picture To Your Album! </h1>
 
 <%= form_for @entry do |f|%>
+    <%= f.hidden_field :album_id, value: @logged_in_user.album.frist.id%>
     <%= f.label :date %>
     <%= f.date_field :date %>
 
