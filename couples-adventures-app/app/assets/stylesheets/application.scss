@@ -24,8 +24,30 @@
     align-items: center;
  }*/
 
+ body{
+    font-family: 'Chilanka', cursive;
+    
+    
+ }
+
  h1 {
      font-family: cursive;
-     color: #c28285;
+     color: #000000;
+     background-color: #f0bec0;
+     border: 1px solid;
+     padding: 10px;
+     box-shadow: 5px 10px #888888;
+     width:80%;
+     margin:25px auto;
      
+ }
+
+
+ .menu-bar form{
+     width:40%;
+ }
+
+ .menu-bar button{
+     width:45vw;
+     display: inline-block;
  }
