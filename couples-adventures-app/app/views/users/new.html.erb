@@ -1,15 +1,17 @@
-<h1>Create a User!</h1>
+<div class = "container">
+            <h1>Create a User!</h1>
 
-<%= form_for @user do |f| %>
-    <ul>
-    <li>
-        <%= f.label :name %>
-        <%= f.text_field :name %>
-    </li>
-    <li>
-        <%= f.label :password %>
-        <%= f.password_field :password %>
-    </li>
-    </ul>
-    <%= f.submit "Create your User" %>
-<% end %>
+            <%= form_for @user do |f| %>
+                <ul>
+                <li>
+                    <%= f.label :name %>
+                    <%= f.text_field :name %>
+                </li>
+                <li>
+                    <%= f.label :password %>
+                    <%= f.password_field :password %>
+                </li>
+                </ul>
+                <%= f.submit "Create your User" %>
+            <% end %>
+</div>
