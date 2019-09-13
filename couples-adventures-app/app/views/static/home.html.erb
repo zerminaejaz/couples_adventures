@@ -12,7 +12,13 @@
     <div class = "row text-center">
         <div class = "col col-md-2"> </div>
         <div class= "col col-md-8 text-center " style = "margin-top: 3%">
-            <h2>Account Login</h2>
+            <%# <h3 id="error_msg" style="#c575a7"> %>
+                <% if  flash[:errors]%>
+                    <% flash[:errors].each do |message| %>
+                     <h3 id="error_msg" style="#c575a7"><%= message %></h3>
+                    <%end%>
+                <%end%>
+            <h2 style= "margin-top: 2%">Account Login</h2>
                  <%=  form_tag login_index_path do %>
                     <%= label_tag :name %>
                     <%= text_field_tag :name %>

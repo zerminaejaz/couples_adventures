@@ -1,4 +1,12 @@
- <img src= "<%= @picture.url %>"/> 
+ <% if Picture.exists?(@picture.id - 1)%>
+    <%= button_to "Previous Picture", picture_path(@picture.id - 1), method: :get %>
+<% end %>
+ 
+ <img height = "300px" src= "<%= @picture.url %>"/> 
+
+ <% if Picture.exists?(@picture.id + 1)%>
+    <%= button_to "Next Picture", picture_path(@picture.id + 1), method: :get %>
+<% end %>
 
 
  

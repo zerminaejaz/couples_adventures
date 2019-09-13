@@ -20,7 +20,7 @@
                 <%= f.text_field :description %>
                 <br>
                 <%= f.label :picture_id %>
-                <%= f.collection_select :picture_id, Picture.all,:id, :url  %> <!--update after session lesson  -->
+                <%= f.collection_select :picture_id, @logged_in_user.pictures.all,:id, :url  %> <!--update after session lesson  -->
                 <br>
                 <%= f.submit %>
             <%end%>

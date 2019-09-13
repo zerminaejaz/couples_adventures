@@ -4,4 +4,8 @@ class Picture < ApplicationRecord
 
     validates :date, :url, :album_id, presence: true
 
+    def parsed_date
+        self.date.strftime('%D')
+    end
+
 end

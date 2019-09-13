@@ -8,8 +8,8 @@ class LoginController < ApplicationController
         # byebug    
             redirect_to user_path(session[:user_id])
         else
-            flash[:errors] = "Your Ship Could Not Be Found. Try another Port"
-            redirect_to new_login_path
+            flash[:errors] = ["Your Ship Could Not Be Found. Try another Port"]
+            redirect_to home_static_path
         end
 
     end
