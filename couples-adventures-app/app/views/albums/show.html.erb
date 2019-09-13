@@ -1,8 +1,9 @@
 <div class ="container">
-
     <div class = "row text-center">
         <div class = "col col-md-12">
-            <h1> <%= @album.name %></h1>
+            <img src= "https://media.giphy.com/media/JRsQiAN79bPWUv43Ko/giphy.gif" style="height:100px" />
+            <h1 style = "margin-top: 2%"> <%= @album.name %></h1>
+            <h1>---------------------------------------</h1>
         </div>
     </div>
     <div class = "row text-center">
@@ -11,7 +12,7 @@
                 <%= picture.date %>
                 <br>
                 <a href="<%=picture_path(picture)%>%">
-                <img src= "<%= picture.url %>" style="width:100px;height:auto" />
+                <img src= "<%= picture.url %>" style="height:100px" />
                 </a>
                 <%= button_to "Delete", picture, method: :delete%>
                 <br>
@@ -21,7 +22,7 @@
 
     <div class = "row text-center">
         <div class = "col col-md-12">
-            <h1>~~~~~~~~~~~~~~~~~~~~~~~~~~~~</h1>
+            <h1>---------------------------------------</h1>
             <%= form_for @picture do |f|%>
             <%= f.hidden_field :album_id, value: @album.id%>
                 <%= f.label :date %>

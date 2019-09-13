@@ -2,7 +2,7 @@
     <div class = "row text-center">
         <div class = "col col-md-2"> </div>
         <div class = "col col-md-10"><h1> %>
-            <img id = "home_welcome" src="https://media1.giphy.com/media/9NaMJmQoQrKog/giphy.gif" style = "margin-bottom: 3%" height="100" width="100">
+            <img src="https://media1.giphy.com/media/9NaMJmQoQrKog/giphy.gif" style = "margin-bottom: 3%" height="100" width="100">
             <%= form_for @entry do |f|%>
                 <%= f.hidden_field :diary_id, value: @logged_in_user.diaries.first.id%>
                 <%= f.label :date %>

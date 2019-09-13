@@ -1,24 +1,26 @@
-<div class = "container text-center" style = "margin: 8%">
+<div class = "container text-center" style = "margin: 5%">
     <div class = "row">
     <div class = "col col-md-2"> </div>
         <div class = "col col-md-10">
-            <h2><%= @user.name %></h2>
+            <img src=" https://i.pinimg.com/originals/67/9e/9e/679e9e192709529e8865baeeb606de54.gif" style = "margin-bottom: 3%" height="200">
+
+            <h1><u><%= @user.name %></u></h2>
             <br>
-            <h2>Where would you like to go?</h2>
-            <br>
+            <h3>Where would you like to go?</h2>
+        
             <% if !@user.diaries.first%>
-                <%= button_to "Add Diary", new_diary_path, method: :get%>
+                <p style = "margin-top: 3% margin-bottom: 1%"><%= button_to "Add Diary", new_diary_path, method: :get%></p>
             <% else %>
-                <%= button_to "Diary", diary_path(@user.diaries.first), method: :get%>
+                <p style = "margin-top: 3% margin-bottom: 1%"><%= button_to "Diary", diary_path(@user.diaries.first), method: :get%></p>
             <% end %>
 
             <% if !@user.albums.first%>
-                <%= button_to "Add Album", new_album_path, method: :get%>
+                <p style = "margin-bottom: 1%"><%= button_to "Add Album", new_album_path, method: :get%></p>
             <% else %>
-                <%= button_to "Album", album_path(@user.albums.first), method: :get%>
+                <p style = "margin-bottom: 1%"><%= button_to "Album", album_path(@user.albums.first), method: :get%></p>
             <% end %>
 
-            <%= button_to "Sink Your Boat (Delete Account) ", @user, method: :delete%>
+            <p style = "margin-bottom: 1%"><%= button_to "Sink Your Boat (Delete Account) ", @user, method: :delete%></p>
         </div>
     <div class = "col col-md-2"> </div>
 </div>
