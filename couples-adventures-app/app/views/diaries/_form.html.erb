@@ -1,3 +1,9 @@
+ <% if  flash[:errors]%>
+    <% flash[:errors].each do |message| %>
+        <p><%= message %></p>
+    <%end%>
+<%end%>
+
 <%= form_for @diary do |f|%>
     <%= f.hidden_field :user_id, value: @diary.user.id %>
     <%= f.label :shipname %>

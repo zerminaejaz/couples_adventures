@@ -16,7 +16,12 @@ class AlbumsController < ApplicationController
 
     def create
         @album = Album.create(album_params)
-        redirect_to @album
+        if @album.valid?
+            redirect_to @album
+        else
+            flash[:errors] = @album.errors.full_messages
+            redirect_to new_album_path
+        end
     end
 
     def edit
@@ -25,7 +30,12 @@ class AlbumsController < ApplicationController
     
     def update
         @album.update(album_params)
-        redirect_to @album
+        if @album.valid?
+            redirect_to @album
+        else
+            flash[:errors] = @album.errors.full_messages
+            redirect_to edit_album_path(@album)
+        end
     end
 
     def destroy

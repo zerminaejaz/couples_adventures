@@ -1,3 +1,9 @@
+<% if  flash[:errors]%>
+    <% flash[:errors].each do |message| %>
+        <p><%= message %></p>
+    <%end%>
+<%end%>
+
 <h1> Add A New Picture To Your Album! </h1>
 
 <%= form_for @entry do |f|%>

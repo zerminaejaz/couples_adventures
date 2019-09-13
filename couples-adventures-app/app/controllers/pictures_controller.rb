@@ -15,7 +15,12 @@ class PicturesController < ApplicationController
     def create
         @picture = Picture.create(picture_params)
         # render new_entry_path need to do cookies to edit a return to previous page
-        redirect_to album_path(@picture.album.id)
+        if @picture.valid?
+            redirect_to album_path(@picture.album.id)
+        else
+            flash[:errors] = @picture.errors.full_messages
+            redirect_to new_picture_path
+        end
     end
 
     def new_entry_picture

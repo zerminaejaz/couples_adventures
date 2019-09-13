@@ -19,7 +19,12 @@ class DiariesController < ApplicationController
 
     def create
         @diary = Diary.create(diary_params)
-        redirect_to @diary
+        if @diary.valid?
+            redirect_to @diary
+        else
+            flash[:errors] = @diary.errors.full_messages
+            redirect_to new_diary_path
+        end
     end
 
     def edit
@@ -27,7 +32,12 @@ class DiariesController < ApplicationController
     
     def update
         @diary.update(diary_params)
-        redirect_to @diary
+        if @diary.valid?
+            redirect_to @diary
+        else
+            flash[:errors] = @diary.errors.full_messages
+            redirect_to new_diary_path
+        end
     end
 
     def destroy

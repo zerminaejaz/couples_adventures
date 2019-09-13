@@ -1,4 +1,9 @@
 <div class = "container">
+    <% if  flash[:errors]%>
+    <% flash[:errors].each do |message| %>
+        <p><%= message %></p>
+        <%end%>
+    <%end%>
             <h1>Create a User!</h1>
 
             <%= form_for @user do |f| %>

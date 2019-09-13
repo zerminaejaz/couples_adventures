@@ -14,7 +14,12 @@ class EntriesController < ApplicationController
 
     def create
         @entry = Entry.create(entry_params)
-        redirect_to @entry
+        if @entry.valid?
+            redirect_to @entry
+        else
+            flash[:errors] = @entry.errors.full_messages
+            redirect_to new_entry_path
+        end
     end
 
     def edit
@@ -22,7 +27,12 @@ class EntriesController < ApplicationController
     
     def update
         @entry.update(entry_params)
-        redirect_to @entry
+        if @entry.valid?
+            redirect_to @entry
+        else
+            flash[:errors] = @entry.errors.full_messages
+            redirect_to new_entry_path
+        end
     end
 
     def destroy
