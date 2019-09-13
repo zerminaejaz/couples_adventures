@@ -24,6 +24,28 @@
     align-items: center;
  }*/
 
+ .navbar-nav{
+    width:100vw;
+ }
+
+ 
+ .navbar-log{
+   border-color: red; 
+   border-width: 2px;
+   float:right;
+ }
+
+ ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+ }
+
+ li{
+    margin-left: 1%;
+ }
+
+
  body{
     font-family: 'Chilanka', cursive;
     
@@ -39,8 +61,12 @@
      box-shadow: 2px 10px #888888;
  }
 
-
  .menu-bar button{
      width:10vw;
      display: inline-block;
+ }
+
+ #foot{
+    align-content: center;
+
  }

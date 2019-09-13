@@ -4,18 +4,26 @@
     <%end%>
 <%end%>
 
-<h1> Add A New Picture To Your Album! </h1>
 
-<%= form_for @picture do |f|%>
-    <%= f.hidden_field :album_id, value: @logged_in_user.albums.first.id%>
-    <%= f.label :date %>
-    <%= f.date_field :date %>
+<div class = "container" style= "margin-top: 5%">
+    <div class = "row text-center">
+        <div class = "col col-md-2"> </div>
+        <div class = "col col-md-8"><h1>
+            <img src = "https://i.pinimg.com/originals/6d/0c/03/6d0c035e30176346fbd74663535f704c.gif" style = "height: 200px">
+            <h1> Add A New Picture To Your Album! </h1>
+            <%= form_for @picture do |f|%>
+                <%= f.hidden_field :album_id, value: @logged_in_user.albums.first.id%>
+                <%= f.label :date %>
+                <%= f.date_field :date %>
 
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-    
-    <%= f.label :album_id %>
-    <%= f.collection_select :album_id, @logged_in_user.albums.all, :id, :name %>
+                <%= f.label :url %>
+                <%= f.text_field :url %>
+                
+                <%= f.label :album_id %>
+                <%= f.collection_select :album_id, @logged_in_user.albums.all, :id, :name %>
 
-    <%= f.submit "Add Picture" %>
-<%end%>
+                <%= f.submit "Add Picture" %>
+            <%end%>
+        <div class = "col col-md-2"> </div>
+    </div>
+</div>

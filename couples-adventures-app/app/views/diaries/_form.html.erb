@@ -5,7 +5,7 @@
 <%end%>
 
 <%= form_for @diary do |f|%>
-    <%= f.hidden_field :user_id, value: @diary.user.id %>
+    <%= f.hidden_field :user_id, value: @logged_in_user.id%>
     <%= f.label :shipname %>
     <%= f.text_field :shipname %>
 
