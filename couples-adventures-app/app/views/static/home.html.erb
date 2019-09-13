@@ -3,29 +3,31 @@
     <div class = "row text-center">
         <div class = "col col-md-2"> </div>
         <div class = "col col-md-8">
-        <img src="https://media.giphy.com/media/fvN5KrNcKKUyX7hNIA/giphy.gif">
-        <h1>Welcome to Couple's Adventures!</h1>
+        <img src="https://media.giphy.com/media/fvN5KrNcKKUyX7hNIA/giphy.gif" height="300" width="300">
+        <h1>Welcome to <br>Couple's Adventures!</h1>
         </div>
         <div class = "col col-md-2"> </div>
     </div>
     <div class = "row text-center">
         <div class = "col col-md-2"> </div>
-        <div class= "col col-md-8 text-center">
+        <div class= "col col-md-8 text-center " style = "margin-top: 3%">
             <h2>Account Login</h2>
                  <%=  form_tag login_index_path do %>
                     <%= label_tag :name %>
                     <%= text_field_tag :name %>
+                    <br>
                     <%= label_tag :password %>
                     <%= password_field_tag :password %>
+                    <br>
                     <%= submit_tag "Log in" %>
                  <%end%>
         </div>
         <div class = "col col-md-2"> </div>
     </div>
-    <div class = "row text-center" style = "margin-top: 1%">
+    <div class = "row text-center" style = "margin-top: 5%">
         <div class = "col col-md-2"> </div>
         <div class = "col col-md-8">
-                <h2 style="color: pink"><%= link_to "Create Account", new_user_path %></h2>
+                <h4 style="color: pink"><%= link_to "Create Account", new_user_path %></h4>
         </div>
         <div class = "col col-md-2"> </div>
     </div>
