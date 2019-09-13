@@ -1,20 +1,29 @@
-<h1><%= @user.name %></h1>
+<div class = "container text-center" style = "margin: 8%">
+    <div class = "row">
+    <div class = "col col-md-2"> </div>
+        <div class = "col col-md-10">
+            <h2><%= @user.name %></h2>
+            <br>
+            <h2>Where would you like to go?</h2>
+            <br>
+            <% if !@user.diaries.first%>
+                <%= button_to "Add Diary", new_diary_path, method: :get%>
+            <% else %>
+                <%= button_to "Diary", diary_path(@user.diaries.first), method: :get%>
+            <% end %>
 
-<h2>Where would you like to go?</h2>
+            <% if !@user.albums.first%>
+                <%= button_to "Add Album", new_album_path, method: :get%>
+            <% else %>
+                <%= button_to "Album", album_path(@user.albums.first), method: :get%>
+            <% end %>
+
+            <%= button_to "Sink Your Boat (Delete Account) ", @user, method: :delete%>
+        </div>
+    <div class = "col col-md-2"> </div>
+</div>
+    
 
 
-<% if !@user.diaries.first%>
-    <%= button_to "Add Diary", new_diary_path, method: :get%>
-<% else %>
-    <%= button_to "Diary", diary_path(@user.diaries.first), method: :get%>
-<% end %>
-
-<% if !@user.albums.first%>
-    <%= button_to "Add Album", new_album_path, method: :get%>
-<% else %>
-    <%= button_to "Album", album_path(@user.albums.first), method: :get%>
-<% end %>
-
-<%= button_to "Sink Your Boat (Delete Account) ", @user, method: :delete%>
 
 
