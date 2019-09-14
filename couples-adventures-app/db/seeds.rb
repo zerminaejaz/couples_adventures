@@ -27,4 +27,19 @@ pic2 = Picture.create(date: Time.now, url: "http://i.ytimg.com/vi/QhgWZz7zH70/hq
 entry1 = Entry.create(date: Time.now, title: "Long awaited reunion", description: "Traveled through time and space for this.", picture: pic1, diary: d1)
 entry2 = Entry.create(date: Time.now, title: "Our First Fight", description: "Where do you want to eat", picture: pic2, diary: d1)
 
+
+
+user2 = User.create(name: "Ash", password: "misty")
+
+d2 = Diary.create(shipname: "AshMisty", person1: "Ash", person2: "Misty", user: user2)
+
+album2 = Album.create(name:"Gotta Catch 'em All", user: user2)
+
+pic3 = Picture.create(date: Time.now, url: "https://thumbs.gfycat.com/DefinitiveDampConure-small.gif", album: album2) 
+pic4 = Picture.create(date: Time.now, url: "https://media.giphy.com/media/ajsXUbmY1fsPu/giphy.gif", album: album2) 
+
+
+
+entry3 = Entry.create(date: Time.now, title: "Long awaited reunion", description: "First Encounter", picture: pic3, diary: d2)
+entry4 = Entry.create(date: Time.now, title: "Our First Icecream", description: "Where do you want to eat", picture: pic4, diary: d2)
 puts "its been Seeded"
