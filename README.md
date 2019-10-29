@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+Couple can create an account, a diary and a photo album. The couple can add and view entries in their diary, as well as add pictures to their album
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
++ Used Ruby on Rails to store couple’s diary entries and pictures
++ Used Bootstrap and HTML/CSS to create a clean, modern frontend theme
++ Used BCRYPT to hash account passwords to add security for users
